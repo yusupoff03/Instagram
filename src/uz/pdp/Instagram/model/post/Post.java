@@ -6,7 +6,6 @@ public class Post extends BaseModel {
     private PostType postType;
     private Long userId;
     private String description;
-
     public Post(PostType postType, Long userId, String description) {
         this.postType = postType;
         this.userId = userId;

@@ -1,23 +1,39 @@
 package uz.pdp.Instagram.model;
 
-public class Followers extends User{
-private Long userId;
+import java.util.UUID;
 
-    public Followers(String username, String password, String phoneNumber, String fullName, String bio, Long userId) {
-        super(username, password, phoneNumber, fullName, bio);
-        this.userId = userId;
-    }
+public class Followers extends BaseModel{
+private UUID userId;
+private String username;
+private String post;
 
-    public Followers(String username, String password, String phoneNumber, String fullName, Long userId) {
-        super(username, password, phoneNumber, fullName);
-        this.userId = userId;
-    }
-
-    public Long getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
+    }
+
+    public Followers(UUID userId, String username, String post) {
+        this.userId = userId;
+        this.username = username;
+        this.post = post;
     }
 }

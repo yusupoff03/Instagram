@@ -6,20 +6,21 @@ public class User extends BaseModel {
     private String phoneNumber;
 private String fullName;
 private String Bio;
+private String gmail;
 
-    public User(String username, String password, String phoneNumber, String fullName, String bio) {
+    public User(String username, String password, String phoneNumber, String fullName, String bio, String gmail) {
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.fullName = fullName;
         Bio = bio;
+        this.gmail = gmail;
     }
 
-    public User(String username, String password, String phoneNumber, String fullName) {
+    public User(String username, String password, String phoneNumber) {
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        this.fullName = fullName;
     }
 
     public User() {
@@ -63,5 +64,13 @@ private String Bio;
 
     public void setBio(String bio) {
         Bio = bio;
+    }
+
+    public String getGmail() {
+        return gmail;
+    }
+
+    public void setGmail(String gmail) {
+        this.gmail = gmail;
     }
 }

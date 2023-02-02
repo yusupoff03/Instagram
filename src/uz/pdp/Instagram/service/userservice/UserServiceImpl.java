@@ -8,8 +8,21 @@ import java.util.UUID;
 public class UserServiceImpl implements UserService, UserRepository {
     @Override
     public int add(User model) {
+        for (User user:users) {
+            if(user.getUsername().equals(model.getUsername()) && !checkUsername(user.getUsername())){
+                return -1;
+            }
+        }
         users.add(model);
         return 1;
+    }
+    public boolean checkUsername(String username){
+        for (int i = 0; i < users.size(); i++) {
+            if (!username.equals(users.get(i).getUsername())){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -40,5 +53,19 @@ public class UserServiceImpl implements UserService, UserRepository {
             }
         }
         return -1;
+    }
+
+    @Override
+    public User signIn(String usename, String password) {
+        for (User user:users) {
+            if(user.getPassword().equals(password) && user.getUsername().equals(usename)){
+                return user;
+            }
+        }
+        return null;
+    }
+    @Override
+    public User signIn2(String phoneNumber, String password) {
+        return null;
     }
 }

@@ -8,7 +8,8 @@ import java.util.UUID;
 public class FollowersServiceImpl implements FollowersService, FollowersRepository{
     @Override
     public int add(Followers model) {
-        return 0;
+       followers.add(model);
+       return 1;
     }
 
     @Override

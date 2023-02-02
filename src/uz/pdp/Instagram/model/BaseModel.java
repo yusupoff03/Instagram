@@ -3,7 +3,10 @@ package uz.pdp.Instagram.model;
 import java.util.UUID;
 
 public abstract class BaseModel {
-   private UUID id;
+    static{
+        id=UUID.randomUUID();
+    }
+   private static UUID id;
 
     public UUID getId() {
         return id;
